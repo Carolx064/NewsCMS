@@ -1,33 +1,15 @@
+import HeroSection from "../sections/home/HeroSection";
+import LatestNewsSection from "../sections/home/LatestNewsSection";
+import CategoriesSection from "../sections/home/CategoriesSection";
+
 function Home() {
     return (
         <>
+            <HeroSection />
 
-            <section className="py-5">
+            <LatestNewsSection />
 
-                <h1 className="display-3 fw-bold">
-
-                    Bienvenido a NewsCMS
-
-                </h1>
-
-                <p
-                    className="lead mt-4"
-                    style={{
-                        color: "#94A3B8"
-                    }}
-                >
-                    Tu portal de noticias desarrollado con React,
-                    Express y MySQL.
-                </p>
-
-                <button
-                    className="btn btn-primary btn-lg mt-3"
-                >
-                    Explorar noticias
-                </button>
-
-            </section>
-
+            <CategoriesSection />
         </>
     );
 }
