@@ -1,9 +1,13 @@
 // src/config/routesConfig.js
 
 import Home from "../pages/Home";
+import Article from "../pages/Article";
+
 import Login from "../pages/auth/Login";
 import Register from "../pages/auth/Register";
+
 import Dashboard from "../pages/admin/Dashboard";
+
 import NotFound from "../pages/NotFound";
 
 import PublicLayout from "../layouts/PublicLayout";
@@ -24,6 +28,24 @@ const routes = [
         layout: PublicLayout,
 
         showInNavbar: true,
+
+        requiresAuth: false,
+
+        roles: []
+    },
+
+    {
+        id: "article",
+
+        title: "Artículo",
+
+        path: "/article/:id",
+
+        component: Article,
+
+        layout: PublicLayout,
+
+        showInNavbar: false,
 
         requiresAuth: false,
 

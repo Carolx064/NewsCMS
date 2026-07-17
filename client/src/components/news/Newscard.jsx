@@ -1,55 +1,62 @@
+import { Link } from "react-router-dom";
+
 function NewsCard({ article }) {
     return (
-        <article
-            className="card h-100 shadow-sm"
-            style={{
-                background: "#1E293B",
-                border: "1px solid #334155",
-                color: "#F8FAFC"
-            }}
+        <Link
+            to={`/article/${article.id}`}
+            className="text-decoration-none"
         >
-            <img
-                src={article.image}
-                alt={article.title}
-                className="card-img-top"
+            <article
+                className="card h-100 shadow-sm"
                 style={{
-                    height: "220px",
-                    objectFit: "cover"
+                    background: "#1E293B",
+                    border: "1px solid #334155",
+                    color: "#F8FAFC",
+                    cursor: "pointer",
+                    transition: "transform .2s ease"
                 }}
-            />
-
-            <div className="card-body">
-
-                <span className="badge bg-primary mb-3">
-                    {article.category}
-                </span>
-
-                <h5 className="card-title fw-bold">
-                    {article.title}
-                </h5>
-
-                <p
-                    className="card-text"
+            >
+                <img
+                    src={article.image}
+                    alt={article.title}
+                    className="card-img-top"
                     style={{
-                        color: "#94A3B8"
+                        height: "220px",
+                        objectFit: "cover"
                     }}
-                >
-                    {article.description}
-                </p>
+                />
 
-            </div>
+                <div className="card-body">
 
-            <div className="card-footer border-0 bg-transparent">
+                    <span className="badge bg-primary mb-3">
+                        {article.category}
+                    </span>
 
-                <small className="text-secondary">
+                    <h5 className="card-title fw-bold">
+                        {article.title}
+                    </h5>
 
-                    {article.date}
+                    <p
+                        className="card-text"
+                        style={{
+                            color: "#94A3B8"
+                        }}
+                    >
+                        {article.summary}
+                    </p>
 
-                </small>
+                </div>
 
-            </div>
+                <div className="card-footer border-0 bg-transparent">
 
-        </article>
+                    <small className="text-secondary">
+                        {article.date}
+                    </small>
+
+                </div>
+
+            </article>
+        </Link>
     );
 }
 
