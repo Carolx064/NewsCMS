@@ -1,7 +1,7 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "Backend API para NewsCMS",
+  "description": "Backend API para Crónica Sin Filtros",
   "type": "module",
   "main": "src/server.js",
   "scripts": {
@@ -13,14 +13,16 @@
     "node",
     "news",
     "cms",
-    "api"
+    "api",
+    "mysql"
   ],
   "author": "Carola Viadel",
   "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^17.4.2",
-    "express": "^5.2.1"
+    "express": "^5.2.1",
+    "mysql2": "^3.23.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"

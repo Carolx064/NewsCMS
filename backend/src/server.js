@@ -1,3 +1,5 @@
+console.log("🟢 Ejecutando server.js");
+
 import dotenv from "dotenv";
 import app from "./app.js";
 
