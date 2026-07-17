@@ -1,3 +1,5 @@
+// src/services/categoryService.js
+
 import mockCategories from "../data/mockCategories";
 
 const categoryService = {
