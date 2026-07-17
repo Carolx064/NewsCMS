@@ -1,9 +1,8 @@
 // src/pages/Article.jsx
 
-import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import mockNews from "../data/mockNews";
+import newsService from "../services/newsService";
 
 import ArticleHeaderSection from "../sections/article/ArticleHeaderSection";
 import ArticleContentSection from "../sections/article/ArticleContentSection";
@@ -12,13 +11,7 @@ import RelatedNewsSection from "../sections/article/RelatedNewsSection";
 function Article() {
     const { id } = useParams();
 
-    useEffect(() => {
-        console.log("Artículo cargado:", id);
-    }, [id]);
-
-    const article = mockNews.find(
-        (news) => news.id === Number(id)
-    );
+    const article = newsService.getNewsById(id);
 
     if (!article) {
         return (
@@ -29,9 +22,7 @@ function Article() {
         );
     }
 
-    const relatedNews = mockNews.filter(
-        (news) => news.id !== article.id
-    );
+    const relatedNews = newsService.getRelatedNews(id);
 
     return (
         <>
